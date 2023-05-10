@@ -1,39 +1,81 @@
 {
 	"relaychain": {
-		"bin": "../../polkadot/target/release/polkadot",
-		"chain": "rococo-local",
-		"nodes": [
-			{
-				"name": "alice",
-				"wsPort": 9944,
-				"port": 30444
-			},
-			{
-				"name": "bob",
-				"wsPort": 9955,
-				"port": 30555
+			"bin": "../polkadot2/target/release/polkadot",
+			"chain": "rococo-local",
+			"nodes": [
+					{
+							"name": "alice",
+							"wsPort": 9944,
+							"port": 30444
+					},
+					{
+							"name": "bob",
+							"wsPort": 9955,
+							"port": 30555
+					},
+					{
+							"name": "charlie",
+							"wsPort": 9966,
+							"port": 30666
+					},
+					{
+							"name": "dave",
+							"wsPort": 9977,
+							"port": 30777
+					}
+			],
+			"genesis": {
+					"runtime": {
+							"runtime_genesis_config": {
+									"parachainsConfiguration": {
+											"config": {
+													"validation_upgrade_frequency": 1,
+													"validation_upgrade_delay": 1
+											}
+									}
+							}
+					}
 			}
-		]
 	},
 	"parachains": [
-		{
-			"bin": "../target/release/polkadot-parachain",
-			"id": "200",
-			"balance": "1000000000000000000000",
-			"nodes": [
-				{
-					"wsPort": 9988,
-					"name": "alice",
-					"port": 31200,
-					"flags": [
-						"--force-authoring",
-						"--",
-						"--execution=wasm"
+			{
+					"bin": "target/release/polkadot-collator",
+					"id": "300",
+					"balance": "1000000000000000000000",
+					"nodes": [
+							{
+									"wsPort": 9999,
+									"port": 31300,
+									"name": "alice",
+									"flags": ["--", "--execution=wasm"]
+							},
+							{
+									"wsPort": 9989,
+									"port": 31400,
+									"name": "bob",
+									"flags": ["--", "--execution=wasm"]
+							}
 					]
-				}
-			]
-		}
+			}
+	],
+	"hrmpChannels": [
+			{
+					"sender": 200,
+					"recipient": 300,
+					"maxCapacity": 8,
+					"maxMessageSize": 512
+			}
 	],
 	"types": {
-	}
+	  "Id": "[u8; 4]",
+	  "ChainId": "Id",
+	  "LaneId": "Id",
+		"MessageNonce": "u64",
+"MessageId": "(Id, u64)",
+"MessageKey": {
+"lane_id": "LaneId",
+"nonce:": "MessageNonce"
+}
+	},
+	"finalization": false
 }
