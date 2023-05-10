@@ -1,4 +1,4 @@
-# Substrate Cumulus Parachain
+# Polkadot Substrate Cumulus Parachain
 
 This project introduces a new Substrate node based on Cumulus. It provides a simplified implementation of a parachain using the Substrate framework within the Polkadot ecosystem.
 
