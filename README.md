@@ -1,4 +1,4 @@
-# Substrate Cumulus Parachain Template
+# Substrate Cumulus Parachain
 
 A new [Cumulus](https://github.com/paritytech/cumulus/)-based Substrate node, ready for hacking ☁️..
 
