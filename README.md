@@ -206,11 +206,13 @@ _Note: Run this command to make sure if your build is built correctly._
 **Now we have working parachain and that is producing blocks and we can also do the transactions.**
 
 - Parachain created and running at ParaID: 2000\
-![Parachain Created](./home/yasin/Pictures/Screenshots/parachain-created.png)
-- Parachain block information \
-![Block Information](./home/yasin/Pictures/Screenshots/parachain-block-info.png)
+![parachain-created](https://github.com/yasindce1998/new-yasin-parachain/assets/36514300/ba84c31e-f7fe-4c72-b343-87513ed5b741)
+
+- Parachain block information
+![parachain-block-info](https://github.com/yasindce1998/new-yasin-parachain/assets/36514300/483a463e-085f-4a50-b797-5e0858804cdc)
+
 - Parachain transaction information \
-![Trasaction Information](./home/yasin/Pictures/Screenshots/parachain-transaction.png)
+![parachain-transaction](https://github.com/yasindce1998/new-yasin-parachain/assets/36514300/16d6ba5c-3a34-46fb-af96-599e2065fb80)
 
 
 ## Resources
